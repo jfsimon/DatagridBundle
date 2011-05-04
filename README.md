@@ -11,4 +11,4 @@ Goal of the bundle
 -  Fully customizable with formatters and decorators
 -  Create your own Twig skin (like with forms)
 
-Project in developpement, come back in a week.
+**Project in developpement, come back in a week.**

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+
+        <!-- factory class -->
+        <parameter key="besimple_datagrid.formatter.factory.class">BeSimple\DatagridBundle\Formatter\FormatterFactory
+        </parameter>
+
+        <!-- formatter classes -->
+        <parameter key="besimple_datagrid.formatter.class.datetime">BeSimple\DatagridBundle\Formatter\DatetimeFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.array">BeSimple\DatagridBundle\Formatter\ArrayFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.object">BeSimple\DatagridBundle\Formatter\ObjectFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.boolean">BeSimple\DatagridBundle\Formatter\BooleanFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.integer">BeSimple\DatagridBundle\Formatter\IntegerFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.decimal">BeSimple\DatagridBundle\Formatter\DecimalFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.price">BeSimple\DatagridBundle\Formatter\PriceFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.percentage">
+            BeSimple\DatagridBundle\Formatter\PercentageFormatter
+        </parameter>
+        <parameter key="besimple_datagrid.formatter.class.string">BeSimple\DatagridBundle\Formatter\StringFormatter
+        </parameter>
+
+        <!-- format aliases -->
+        <parameter key="besimple_datagrid.formatter.alias.date">datetime</parameter>
+        <parameter key="besimple_datagrid.formatter.alias.time">datetime</parameter>
+        <parameter key="besimple_datagrid.formatter.alias.bool">boolean</parameter>
+        <parameter key="besimple_datagrid.formatter.alias.float">decimal</parameter>
+        <parameter key="besimple_datagrid.formatter.alias.int">integer</parameter>
+        <parameter key="besimple_datagrid.formatter.alias.str">string</parameter>
+
+    </parameters>
+    <services>
+
+        <service id="besimple_datagrid.formatter.factory" class="%besimple_datagrid.formatter.factory.class%">
+            <argument>%besimple_datagrid.factory_parameters%</argument>
+            <argument>%besimple_datagrid.formatter.defaults%</argument>
+        </service>
+
+    </services>
+</container>

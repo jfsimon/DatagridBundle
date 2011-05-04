@@ -2,14 +2,12 @@
 
 namespace BeSimple\DatagridBundle\Datasource;
 
-use BeSimple\DatagridBundle\Row\RowsInterface;
-
 interface DatasourceInterface
 {
     /**
      * Return rows.
      *
-     * @return RowsInterface Rows.
+     * @return RowCollection Rows.
      */
     public function getRows();
 
@@ -24,7 +22,6 @@ interface DatasourceInterface
      * Filter rows.
      *
      * @param \Closure|array $callback
-     * @return DatasourceInterface Return $this for chaining.
      */
     public function filter($callback);
 
@@ -32,16 +29,14 @@ interface DatasourceInterface
      * Sort rows.
      *
      * @param string $key Sorting key.
-     * @return DatasourceInterface Return $this for chaining.
      */
-    public function sort($key);
+    public function sort($key, $asc = true);
 
     /**
      * Paginate rows.
      *
      * @param int $length Rows count.
      * @param int $offset First row index.
-     * @return DatasourceInterface Return $this for chaining.
      */
     public function paginate($length, $offset = 0);
 }
